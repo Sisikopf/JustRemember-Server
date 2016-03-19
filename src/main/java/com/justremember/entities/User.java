@@ -1,11 +1,17 @@
 package com.justremember.entities;
 
-/**
- * Created by dimko_000 on 19.03.2016.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @SequenceGenerator(name="user_sequence", sequenceName = "user_id_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     private Long id;
+    @Column(length = 100, nullable = false, unique = true)
     private String email;
+    @Column(length = 150, nullable = false)
     private String password;
 
     public String getPassword() {
