@@ -3,8 +3,10 @@ package com.justremember.entities;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,7 +15,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "notes")
-public class Note {
+public class Note implements Serializable {
     @Id
     @SequenceGenerator(name="note_sequence", sequenceName = "note_id_sequence", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "note_sequence")

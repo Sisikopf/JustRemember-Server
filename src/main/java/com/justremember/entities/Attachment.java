@@ -1,15 +1,17 @@
 package com.justremember.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Andrey on 19.03.2016.
  */
 @Entity
 @Table(name = "attachments")
-public class Attachment {
+public class Attachment implements Serializable {
     @Id
     @SequenceGenerator(name="attachment_sequence", sequenceName = "attachment_id_sequence", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "attachment_sequence")

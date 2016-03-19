@@ -3,8 +3,10 @@ package com.justremember.entities;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -13,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tags")
-public class Tag {
+public class Tag implements Serializable {
     @Id
     @SequenceGenerator(name="tag_sequence", sequenceName = "tag_id_sequence", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tag_sequence")
@@ -23,6 +25,7 @@ public class Tag {
     @Column(length = 100, nullable = false, unique = true)
     private String name;
 
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -30,7 +33,6 @@ public class Tag {
     @JsonManagedReference
     @ManyToMany(mappedBy = "tags")
     private Set<Note> notes;
-
 
     public User getUser() {
         return user;
