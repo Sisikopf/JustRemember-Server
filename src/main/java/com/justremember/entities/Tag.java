@@ -28,9 +28,10 @@ public class Tag implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
-    @JsonManagedReference
+//    @JsonManagedReference
     @ManyToMany(mappedBy = "tags")
     private Set<Note> notes;
 

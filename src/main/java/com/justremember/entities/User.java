@@ -14,7 +14,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User implements Serializable {
     @Id
-    @SequenceGenerator(name="user_sequence", sequenceName = "user_id_sequence", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name="user_sequence", sequenceName = "user_id_sequence", initialValue = 50, allocationSize = 20)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     @Column
     private Long id;
@@ -24,9 +24,11 @@ public class User implements Serializable {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Note> notes;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Tag> tags;
 
     public String getPassword() {

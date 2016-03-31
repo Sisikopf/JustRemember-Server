@@ -37,15 +37,18 @@ public class Note implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL)
+//    @JsonManagedReference
     @JoinTable(name = "notes_tags",
             joinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "note_id", referencedColumnName = "id"))
     private Set<Tag> tags;
 
     @OneToMany(mappedBy = "note", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Attachment> attachments;
 
     public Long getId() {
