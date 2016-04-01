@@ -1,5 +1,6 @@
 package com.justremember.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -29,6 +30,7 @@ public class Attachment implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "note_id")
+    @JsonBackReference
     private Note note;
 
     public Long getId() {

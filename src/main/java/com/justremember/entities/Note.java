@@ -17,7 +17,7 @@ import java.util.Set;
 @Table(name = "notes")
 public class Note implements Serializable {
     @Id
-    @SequenceGenerator(name="note_sequence", sequenceName = "note_id_sequence", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name="note_sequence", sequenceName = "note_id_sequence", initialValue = 50, allocationSize = 20)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "note_sequence")
     @Column
     private Long id;
@@ -37,15 +37,18 @@ public class Note implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL)
+//    @JsonManagedReference
     @JoinTable(name = "notes_tags",
             joinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "note_id", referencedColumnName = "id"))
     private Set<Tag> tags;
 
     @OneToMany(mappedBy = "note", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<Attachment> attachments;
 
     public Long getId() {
