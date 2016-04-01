@@ -17,7 +17,7 @@ import java.util.Set;
 @Table(name = "notes")
 public class Note implements Serializable {
     @Id
-    @SequenceGenerator(name="note_sequence", sequenceName = "note_id_sequence", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name="note_sequence", sequenceName = "note_id_sequence", initialValue = 50, allocationSize = 20)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "note_sequence")
     @Column
     private Long id;
