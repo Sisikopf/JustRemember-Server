@@ -36,6 +36,7 @@ public class NoteController {
     @RequestMapping(value = "/users/{userId}/notes/{id}", method = RequestMethod.PUT)
     public ResponseEntity<?> updateNote(@PathVariable long userId, @PathVariable long id, @RequestBody Note note) {
         note.setId(id);
+        note.setUser(userService.getById(userId));
         noteService.save(note);
         return new ResponseEntity<>(HttpStatus.OK);
     }

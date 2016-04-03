@@ -1,0 +1,227 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #eeeeee;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background: #1e88e5;
+    height: 70px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26);
+}
+
+.headerInner {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+    color: white;
+    padding: 23px 50px;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.note {
+    margin-top: 30px;
+    background: #fafafa;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.26);
+    padding: 30px 50px;
+}
+
+.noteHeader {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.noteName a {
+    font-size: 24px;
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.noteTime {
+    color: #616161;
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.noteContent {
+    margin-bottom: 20px;
+    color: #212121;
+}
+
+a.moreBtn {
+    color: #1e88e5;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 7px 15px;
+}
+
+a.moreBtn:hover {
+    background: #eeeeee;
+    border-radius: 5px;
+}
+
+.addDialog {
+    max-width: 800px;
+    background: #fafafa;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.26);
+    box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.26);
+}
+
+.addDialogHeader {
+    background: #1e88e5;
+    color: white;
+    padding: 20px 40px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+form.addDialogForm {
+    padding: 20px 40px 30px;
+}
+
+input#noteName {
+    width: 100%;
+    padding: 3px 0px;
+    font-size: 18px;
+    background: transparent;
+    border: 0px;
+    border-bottom: 1px solid #1e88e5;
+    margin-bottom: 20px;
+}
+
+input#noteName:focus {
+    outline: 0;
+}
+
+textarea#noteContent {
+    border: 1px solid #1e88e5;
+    font-size: 16px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button:hover {
+    background: #eeeeee;
+    border-radius: 5px;
+}
+
+button {
+    border: 0px;
+    margin: 20px 20px 0px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: transparent;
+    padding: 7px 15px;
+    color: #616161;
+    cursor: pointer;
+}
+
+.addBtn {
+    width: 56px;
+    height: 56px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 56px;
+    background: #1E88E6;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+.addBtn a {
+    display: block;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    line-height: 2.4;
+    color: white;
+    text-align: center;
+    border-radius: 56px;
+}
+
+.ngdialog-close {
+    display: none;
+}
+
+.ngdialog-content {
+    background: transparent !important;
+    max-width: 800px !important;
+    width: 100% !important;
+}
+
+.noteOptionsBtn {
+    float: right;
+}
+.noteOptionsBtn a:hover {
+    background: #eeeeee;
+    border-radius: 30px;
+}
+.noteOptionsBtn a {
+    color: #1e88e5;
+    padding: 6px;
+}
+
+.nodeOptionsMenu ul li a {
+    display: block;
+    padding: 15px;
+    color: #424242;
+    font-size: 18px;
+}
+
+.nodeOptionsMenu ul li a:hover {
+    background: #eeeeee;
+}
+
+.nodeOptionsMenu ul li {
+    list-style: none;
+}
+
+.nodeOptionsMenu {
+    width: 210px;
+    float: right;
+    position: relative;
+    top: -10px;
+    right: -40px;
+    background: #fafafa;
+    -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.26);
+    box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.26);
+}
+
+span.material-icons {
+    vertical-align: middle;
+    padding-right: 15px;
+}
